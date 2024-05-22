@@ -1,0 +1,76 @@
+body{
+    font-family: Arial;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h1{
+    margin-bottom: 10px;
+}
+fieldset{
+    color: #01bcd4;
+    padding: 10px 10px 1px 1px;
+    border: 2px solid transparent;
+    border-bottom-color: #01bcd4;
+    border-radius: 2px;
+}
+.itemTable td, th{
+    border: 1px solid;
+    padding: 10px;
+}
+.itemTable {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    text-align: center;
+}
+.itemTable thead{
+    background-color: #62efff;
+}
+.itemTable tbody tr:nth-child(even){
+    background-color: lightcyan;
+}
+.search-tag{
+    color: orange;
+}
+form {
+    width: 800px;
+    padding:20px 1px 20px 1px;
+}
+.searchBar{
+    font-size: 16px;
+    border: 2px solid red;
+    border-radius: 3px;
+    width: 695px;
+    padding:10px ;
+    style-display: inline;
+}
+.searchButton {
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    border: 2px solid red;
+    border-radius: 3px;
+    padding:10px ;
+    style-display: inline;
+    width: 100px;
+    background-color: red;
+}
+.navig {
+    width: 800px;
+    padding: 10px;
+    align-content: space-between;
+}
+.navig a {
+    line-height: 30px;
+    font-size: 10px;
+    padding: 5px 10px 5px 10px;
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border: 10px;
+    margin: 10px;
+}

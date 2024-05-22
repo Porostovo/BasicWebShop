@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Basic Webshop</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <meta charset="utf-8"/>
+</head>
+    <body>
+    <h1>
+        <fieldset>My petit shop</fieldset>
+    </h1>
+    <header th:insert="~{fragments/navigation :: navigationFragment}">
+    </header>
+    <h2 th:if="${name.isEmpty()}"><span
+            th:text="${text}+${#numbers.formatDecimal(average, 0, 'COMMA', 2, 'POINT')}"> </span></h2>
+    <h2 th:unless="${name.isEmpty()}"><span th:text="${text}+${name}"> </span></h2>
+</body>
+</html>

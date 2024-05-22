@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Basic Webshop</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+
+<h1><fieldset>My petit shop</fieldset></h1>
+
+<header th:insert="~{fragments/navigation :: navigationFragment}"></header>
+
+<form action="/webshop" method="post">
+    <label class="search-tag" for="searchBar">Search for: <br></label>
+    <input class="searchBar" type="search" name="searchBar" id="searchBar" placeholder="... someting like Nike">
+
+    <label><input class="searchButton" type="submit" name = "searchButton" value="Search" ></label>
+</form>
+
+<h2 th:if="${items.isEmpty()}">There are no items.</h2>
+<table class="itemTable" th:unless="${items.isEmpty()}">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity of Stock</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="tempItem, iter : ${items}" th:object="${tempItem}" th:with="id='#'+${iter.count}">
+        <td th:text="${id}"></td>
+        <td th:text="${tempItem.getName()}"></td>
+        <td th:text="${tempItem.getType()}"></td>
+        <td th:text="${tempItem.getDescription()}"></td>
+        <td> <span th:text="${#numbers.formatDecimal(tempItem.getPrice(), 0, 'COMMA', 2, 'POINT')}"></span> Kč</td>
+        <td th:text="${tempItem.getQuantity()}"></td>
+    </tbody>
+</table>
+</body>
+</html>
